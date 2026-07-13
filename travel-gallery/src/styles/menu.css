@@ -1,0 +1,131 @@
+/* Hamburger-Menü: das einzige Icon der gesamten Website. */
+
+.menu-toggle {
+  position: fixed;
+  top: var(--page-padding);
+  right: var(--page-padding);
+  z-index: 50;
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 22px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: var(--color-text);
+  transition: transform var(--transition-speed) var(--easing, ease),
+    opacity var(--transition-speed) ease;
+}
+
+.menu-icon--open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-icon--open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-icon--open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: min(320px, 85vw);
+  background: var(--color-bg);
+  border-left: 1px solid var(--color-border);
+  padding: 88px 32px 32px;
+  overflow-y: auto;
+  z-index: 40;
+  animation: menu-slide-in var(--transition-speed) ease;
+}
+
+@keyframes menu-slide-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.menu-section {
+  margin-bottom: 32px;
+}
+
+.menu-section--login {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+}
+
+.menu-heading {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  margin: 0 0 12px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  color: var(--color-text);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.menu-link--active {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.menu-link--admin {
+  color: var(--color-text-muted);
+}
+
+.menu-search {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0;
+  font-size: 15px;
+  font-family: inherit;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.menu-search:focus {
+  outline: none;
+  border-bottom-color: var(--color-text);
+}
