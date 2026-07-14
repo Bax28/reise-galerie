@@ -1,0 +1,101 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--page-padding);
+}
+
+.login-form {
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--color-border);
+  padding: 40px;
+  background: var(--color-bg);
+}
+
+.login-title {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0 0 24px;
+  text-align: center;
+}
+
+.form-label {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 16px;
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 8px 0;
+  font-size: 15px;
+  font-family: inherit;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-bottom-color: var(--color-text);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.form-error {
+  color: #b00020;
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+
+.form-submit {
+  margin-top: 24px;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form-submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.form-cancel {
+  margin-top: 12px;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 14px;
+}
